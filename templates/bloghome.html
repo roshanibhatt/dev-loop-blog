@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 {% block blogactive %}active{% endblock blogactive %}
+{% block css %}
+
+{% endblock css %}
 {% block body %}
 <div class="container">
+
+
 <h2>WELCOME TO DEV_LOOP</h2>
-
 {% for blog in blogs  %}
-
 
     <!-- Media Object Example -->
     <div class="my-4">
     <h5 class="text-dark"><a href="/blogpost/{{blog.slug}}" class="text-dark"> {{blog.title}}</a></h5>
     <div class="my-2">
-    {{blog.Content|slice:245}}
+    {{blog.Content|slice:245|safe}}
     </div>
     <a href="/blogpost/{{blog.slug}}" class="text-dark"><button class="btn btn-primary">Read More...</button></a>
 </div>
