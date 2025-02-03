@@ -30,5 +30,8 @@ def blogpost(request,slug):
     return render(request,'blogpost.html',context)
 
 def search(request):
-    return render(request,'search.html')
+    query=request.GET['query']
+    blogs=Blog.objects.filter(title__icontains=query)
+    params={'blogs':blogs}
+    return render(request,'search.html',params)
 

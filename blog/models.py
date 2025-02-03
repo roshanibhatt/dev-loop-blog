@@ -1,5 +1,5 @@
 from django.db import models
-from tinymce.models import HTMLField
+from tinymce.models import HTMLField # type: ignore
 
 # Create your models here.
 class Blog (models.Model):
